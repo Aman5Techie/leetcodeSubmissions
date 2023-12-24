@@ -82,11 +82,8 @@ class Solution {
                     } 
                 }
             }
-
             }
         }
-      
-       
         return minimum_operation;
     }
     public int minOperations(String s) {
@@ -102,6 +99,8 @@ class Solution {
                 }
             }
         }
+
+       
 
         return Math.min(min_operation_01,s.length()-min_operation_01);
         
