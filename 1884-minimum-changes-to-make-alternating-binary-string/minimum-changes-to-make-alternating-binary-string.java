@@ -1,5 +1,5 @@
 class Solution {
-    public int minOperations(String s) {
+    public int mysolution1(String s){
         int minimum_operation = 0;
         int count_10 = 0;
         int count_01 = 0;
@@ -88,6 +88,31 @@ class Solution {
       
        
         return minimum_operation;
+    }
+    public int minOperations(String s) {
+        int min_operation_01 = 0;
+        int min_operation_10 = 0;
+        for(int i = 0;i<s.length();i++){
+            if(i%2 == 0){
+                if(s.charAt(i) != '0'){
+                    min_operation_01++;
+                }
+                if(s.charAt(i) != '1'){
+                    min_operation_10++;
+                }
+                
+            }else{
+                if(s.charAt(i) != '1'){
+                    min_operation_01++;
+                }
+                if(s.charAt(i) != '0'){
+                    min_operation_10++;
+                }
+            }
+        }
+
+        return min_operation_10>min_operation_01?min_operation_01:min_operation_10;
+        
         
     }
 }
