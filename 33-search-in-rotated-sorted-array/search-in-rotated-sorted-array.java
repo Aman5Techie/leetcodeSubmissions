@@ -41,9 +41,7 @@ class Solution {
         if(higest+1 == nums.length){
             return binarysearch(nums,0,nums.length-1,target);
         }
-        int first_half =  binarysearch(nums,0,higest,target);
-        int second_half =  binarysearch(nums,higest+1,nums.length-1,target);
-        return Math.max(first_half,second_half);
+        return Math.max(binarysearch(nums,0,higest,target), binarysearch(nums,higest+1,nums.length-1,target));
         // 
     }
 }
