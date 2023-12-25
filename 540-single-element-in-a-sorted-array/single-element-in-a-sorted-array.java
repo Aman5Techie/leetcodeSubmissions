@@ -1,8 +1,6 @@
 class Solution {
     public int singleNonDuplicate(int[] nums) {
-         System.out.print(nums.length);
         if(nums.length == 1){
-           
             return nums[0];
         }
         int low = 0;
