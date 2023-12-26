@@ -8,14 +8,6 @@ class Solution {
         
     }
 
-    public int max(int[] nums){
-        int max = Integer.MIN_VALUE;
-        for(int i = 0;i<nums.length;i++){
-            max= Math.max(max,nums[i]);
-        }
-        return max;
-
-    }
     public int minEatingSpeed(int[] piles, int h) {
       
         int high = 0;
