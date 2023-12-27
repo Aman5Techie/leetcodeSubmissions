@@ -24,35 +24,27 @@ class Solution {
 
     }
     public int minDays(int[] bloomDay, int m, int k) {
-         double val = (double)m*k;
-        if(val>bloomDay.length){
+         
+        // if()
+          int left = 1;
+        int right = 1000000001;
+        if (m * k > bloomDay.length) {
             return -1;
         }
-
-        Set<Integer> set = new HashSet<Integer>();
-        for(int i : bloomDay){
-            set.add(i);
-        }
-        TreeSet sort_tree = new TreeSet(set);
-        List<Integer> arr = new ArrayList<>(sort_tree);
-
-        int minimum_days = Integer.MAX_VALUE;
-        int low = 0;
-        int high = arr.size() -1;
-        while(low<=high){
-            int mid = (low+((high-low)/2));
-            int value = arr.get(mid);
-            boolean checked_value = check(bloomDay,m,k,value);
-            if(checked_value){
-                minimum_days = Math.min(minimum_days,value);
-                high = mid-1;
-            }else{
-                low = mid+1;
-
+        while (left < right) {
+            int mid = (left + right) / 2;
+            boolean possible = check( bloomDay, m, k,mid);
+            if (possible) {
+                right = mid;
+            } else {
+                left = mid + 1;
             }
         }
-        // if()
+        if (left <= 1000000000) {
+            return left;
+        }
+        return -1;
 
-        return minimum_days;
+
     }
 }
