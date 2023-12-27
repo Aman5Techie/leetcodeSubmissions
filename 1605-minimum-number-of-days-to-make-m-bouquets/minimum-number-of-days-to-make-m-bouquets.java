@@ -28,11 +28,14 @@ class Solution {
         if(val>bloomDay.length){
             return -1;
         }
-        SortedSet<Integer> set = new TreeSet<Integer>();
+
+        Set<Integer> set = new HashSet<Integer>();
         for(int i : bloomDay){
             set.add(i);
         }
-        List<Integer> arr = new ArrayList<>(set);
+        TreeSet sort_tree = new TreeSet(set);
+        List<Integer> arr = new ArrayList<>(sort_tree);
+
         int minimum_days = Integer.MAX_VALUE;
         int low = 0;
         int high = arr.size() -1;
@@ -48,6 +51,7 @@ class Solution {
 
             }
         }
+        // if()
 
         return minimum_days;
     }
