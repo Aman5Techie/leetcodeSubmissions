@@ -3,23 +3,23 @@ class Solution {
         int currentday= 0;
         int sum = 0;
         for(int i = 0;i<arr.length;i++){
-            // if(sum + arr[i] > givensum){
-            //     currentday++;
-            //     sum = arr[i];
-            // }else{
-            //     sum += arr[i];
+            if(sum + arr[i] > givensum){
+                currentday++;
+                sum = arr[i];
+            }else{
+                sum += arr[i];
 
-            // }
+            }
           
-            sum += arr[i];
-           if(sum==givensum){
-               currentday++;
-               sum = 0;
-           }else if(sum>givensum){
-               currentday++;
-               sum = 0;
-               sum += arr[i];
-           }
+        //     sum += arr[i];
+        //    if(sum==givensum){
+        //        currentday++;
+        //        sum = 0;
+        //    }else if(sum>givensum){
+        //        currentday++;
+        //        sum = 0;
+        //        sum += arr[i];
+        //    }
          
         }
         if(sum != 0){
