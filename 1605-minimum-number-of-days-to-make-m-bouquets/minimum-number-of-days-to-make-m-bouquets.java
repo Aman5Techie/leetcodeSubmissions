@@ -24,25 +24,24 @@ class Solution {
 
     }
     public int minDays(int[] bloomDay, int m, int k) {
-        int low =Integer.MAX_VALUE;
-        int high =  Integer.MIN_VALUE;
-        System.out.print(bloomDay.length);
-        double val = (double)m*k;
+         double val = (double)m*k;
         if(val>bloomDay.length){
             return -1;
         }
+        SortedSet<Integer> set = new TreeSet<Integer>();
         for(int i : bloomDay){
-            low = Math.min(low,i);
-            high = Math.max(high,i);
-
+            set.add(i);
         }
-
+        List<Integer> arr = new ArrayList<>(set);
         int minimum_days = Integer.MAX_VALUE;
+        int low = 0;
+        int high = arr.size() -1;
         while(low<=high){
-            int mid = (low+(high-low)/2);
-            boolean checked_value = check(bloomDay,m,k,mid);
+            int mid = (low+((high-low)/2));
+            int value = arr.get(mid);
+            boolean checked_value = check(bloomDay,m,k,value);
             if(checked_value){
-                minimum_days = Math.min(minimum_days,mid);
+                minimum_days = Math.min(minimum_days,value);
                 high = mid-1;
             }else{
                 low = mid+1;
