@@ -10,9 +10,7 @@ class Solution {
             //     sum += arr[i];
 
             // }
-            if(givensum<arr[i]){
-                return Integer.MAX_VALUE;
-            }
+          
             sum += arr[i];
            if(sum==givensum){
                currentday++;
