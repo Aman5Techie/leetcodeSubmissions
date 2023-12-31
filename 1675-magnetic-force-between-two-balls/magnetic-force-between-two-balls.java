@@ -1,23 +1,5 @@
+import java.util.Arrays;
 class Solution {
-    public boolean checkIfpossible(int[] arr, int dis , int m){
-        int last = arr[0];
-        m--;
-        for(int i = 1;i<arr.length;i++){
-            if(arr[i] - last >= dis){
-                last = arr[i];
-                m--;
-            }
-            if(m<=0){
-                return true;
-            }
-        }
-        if(m<=0){
-                return true;
-        }
-
-        return false;
-
-    }
     public int maxDistance(int[] position, int m) {
         Arrays.sort(position);
         int low = 1;
@@ -34,5 +16,22 @@ class Solution {
         }
 
         return high;
+    }
+    public boolean checkIfpossible(int[] arr, int dis , int m){
+        int last = arr[0];
+        m--;
+        for(int i = 1;i<arr.length;i++){
+            if(arr[i] - last >= dis){
+                last = arr[i];
+                m--;
+            }
+            
+        }
+        if(m<=0){
+                return true;
+        }
+
+        return false;
+
     }
 }
