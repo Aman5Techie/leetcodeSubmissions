@@ -3,7 +3,6 @@ class Solution {
     public int maxDistance(int[] position, int m) {
         Arrays.sort(position);
         int low = 1;
-        // int high = position[position.length-1];
         int high = (position[position.length - 1] - position[0]) / (m - 1);
         while(low<=high){
             int mid = (low) + (high-low)/2;
@@ -12,9 +11,7 @@ class Solution {
             }else{
                 high = mid-1;
             }
-
         }
-
         return high;
     }
     public boolean checkIfpossible(int[] arr, int dis , int m){
@@ -24,11 +21,10 @@ class Solution {
             if(arr[i] - last >= dis){
                 last = arr[i];
                 m--;
-            }
-            
+            }      
         }
         if(m<=0){
-                return true;
+            return true;
         }
 
         return false;
