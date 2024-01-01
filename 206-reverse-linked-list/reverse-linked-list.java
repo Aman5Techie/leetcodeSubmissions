@@ -14,9 +14,10 @@ class Solution {
             return head;
         }
         ListNode node = new ListNode(head.val);
+        ListNode newNode = null;
         head = head.next;
         while(head != null){
-            ListNode newNode = new ListNode(head.val);
+            newNode = new ListNode(head.val);
             newNode.next = node;
             node = newNode;
             head = head.next;
