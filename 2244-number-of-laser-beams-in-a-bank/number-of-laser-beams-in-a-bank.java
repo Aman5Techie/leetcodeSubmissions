@@ -11,15 +11,15 @@ class Solution {
                 }
             }
             if(one!=0){
-                total_beams += current*one;
-                current = one;
+                // total_beams += current*one;
+                // current = one;
             number_of_beams.add(one);
             }
         }
        
-        // for(int i = 0;i<number_of_beams.size()-1;i++){
-        //     total_beams += number_of_beams.get(i)*number_of_beams.get(i+1);
-        // }
+        for(int i = 0;i<number_of_beams.size()-1;i++){
+            total_beams += number_of_beams.get(i)*number_of_beams.get(i+1);
+        }
       
         return total_beams;
     }
